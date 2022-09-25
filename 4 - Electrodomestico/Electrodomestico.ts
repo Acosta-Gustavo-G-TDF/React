@@ -53,41 +53,33 @@ class Electrodomestico{
         this.peso=pPeso;
     }
 
-    electrodomesticoBajoConsumo(){
-        let ban:boolean=false;
+    electrodomesticoBajoConsumo():void{
 
-        for(let i:number=0;i<Electrodomestico.length;i++){
-            if(this.getNombre[i]<1000){
-                ban=true;
-                console.log("Electrodomestico de bajo consumo: " + this.getNombre[i]);
+        if(this.consumoEnergetico<1000){
+                console.log("Electrodomestico de bajo consumo: " + this.getNombre);
             }
-        }
-        if(ban===false){
+        else{
             console.log("No hay electrodomesticos de bajo consumo");
         }
     }
 
-    balance(){
+    balance():void{
         let balance = 0;
 
-        for(let i:number=0;i<Electrodomestico.length;i++){
-            balance=this.getPrecioBase[i]/this.getPeso[i];
-            console.log("El balance de " + this.getNombre[i] + " es: " + balance);
-        }
+            balance=this.precioBase/this.peso;
+            console.log("El balance de " + this.getNombre + " es: " + balance);
+        
     }
 
-    altaGama(){
+    altaGama():void{
         let balance = 0;
-        let ban:boolean = false;
-        
-        for(let i:number=0;i<Electrodomestico.length;i++){
-            balance=this.getPrecioBase[i]/this.getPeso[i];
-            if(balance>3){
-                ban=true;
-                console.log("Producto de alta gama: " + this.getNombre[i])
-            }
+
+        balance=this.precioBase/this.peso;
+        if(balance>3){
+            console.log("Producto de alta gama: " + this.getNombre)
         }
-        if(ban===false){
+        
+        else{
             console.log("No hay productos de alta gama")
         }
     }

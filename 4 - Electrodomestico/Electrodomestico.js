@@ -37,35 +37,25 @@ var Electrodomestico = /** @class */ (function () {
         this.peso = pPeso;
     };
     Electrodomestico.prototype.electrodomesticoBajoConsumo = function () {
-        var ban = false;
-        for (var i = 0; i < Electrodomestico.length; i++) {
-            if (this.getNombre[i] < 1000) {
-                ban = true;
-                console.log("Electrodomestico de bajo consumo: " + this.getNombre[i]);
-            }
+        if (this.consumoEnergetico < 1000) {
+            console.log("Electrodomestico de bajo consumo: " + this.getNombre);
         }
-        if (ban === false) {
+        else {
             console.log("No hay electrodomesticos de bajo consumo");
         }
     };
     Electrodomestico.prototype.balance = function () {
         var balance = 0;
-        for (var i = 0; i < Electrodomestico.length; i++) {
-            balance = this.getPrecioBase[i] / this.getPeso[i];
-            console.log("El balance de " + this.getNombre[i] + " es: " + balance);
-        }
+        balance = this.precioBase / this.peso;
+        console.log("El balance de " + this.getNombre + " es: " + balance);
     };
     Electrodomestico.prototype.altaGama = function () {
         var balance = 0;
-        var ban = false;
-        for (var i = 0; i < Electrodomestico.length; i++) {
-            balance = this.getPrecioBase[i] / this.getPeso[i];
-            if (balance > 3) {
-                ban = true;
-                console.log("Producto de alta gama: " + this.getNombre[i]);
-            }
+        balance = this.precioBase / this.peso;
+        if (balance > 3) {
+            console.log("Producto de alta gama: " + this.getNombre);
         }
-        if (ban === false) {
+        else {
             console.log("No hay productos de alta gama");
         }
     };
