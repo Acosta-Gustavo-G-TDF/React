@@ -1,0 +1,12 @@
+"use strict";
+exports.__esModule = true;
+var futbolistas_1 = require("./futbolistas");
+var entrenador_1 = require("./entrenador");
+var masajista_1 = require("./masajista");
+var fecha = new Date('08-05-1989');
+var fecha2 = new Date('08-05-1990');
+var fecha3 = new Date('08-05-1991');
+var futbolista1 = new futbolistas_1.Futbolistas("Alejandro", "Ledesma", 25556, fecha, 10, "Delantero");
+var masajista1 = new masajista_1.Masajista("Emanuel", "Duarte", 25556, fecha2, 10, "Compresion");
+var entrenador1 = new entrenador_1.Entrenador("Roxana", "Fernandez", 25556, fecha3, 10, 5);
+console.log(futbolista1);
