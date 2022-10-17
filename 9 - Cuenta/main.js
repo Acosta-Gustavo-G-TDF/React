@@ -1,0 +1,12 @@
+"use strict";
+exports.__esModule = true;
+var CuentaAhorro_1 = require("./CuentaAhorro");
+var CuentaCorriente_1 = require("./CuentaCorriente");
+var Persona_1 = require("./Persona");
+var persona1 = new Persona_1.Persona("Gabriel", "Gutierrez", 555666777);
+var caPersona1 = new CuentaAhorro_1.CuentaAhorro(555, 10000, persona1, 3, 1000);
+var ccPersona1 = new CuentaCorriente_1.CuentaCorriente(666, 15000, persona1, 1.5);
+console.log(caPersona1.toString);
+console.log(ccPersona1.toString);
+caPersona1.setInteres(4);
+ccPersona1.actualizarSaldo();
